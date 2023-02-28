@@ -54,7 +54,7 @@ function App() {
             <div className="group-button">
                 <div>
                     <label>Rows:</label>
-                    <input type="text" value={numRows} onChange={(event) => setNumRows(Number(event.target.value))} />
+                    <input type="number" value={numRows} onChange={(event) => setNumRows(Number(event.target.value))} />
                 </div>
                 <div>
                     <label>Columns:</label>
