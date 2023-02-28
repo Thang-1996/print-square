@@ -3,8 +3,8 @@ import React from "react"
 import './App.css';
 
 function App() {
-    const [numRows, setNumRows] = React.useState(2);
-    const [numCols, setNumCols] = React.useState(2);
+    const [numRows, setNumRows] = React.useState(1);
+    const [numCols, setNumCols] = React.useState(1);
     const [squareSize, setSquareSize] = React.useState(100);
 
     const handleResize = (index, size) => {
@@ -45,15 +45,15 @@ function App() {
             <div className="group-button">
                 <div>
                     <label>Rows:</label>
-                    <input type="number" value={numRows} onChange={(event) => setNumRows(Number(event.target.value))} />
+                    <input type="text" value={numRows} onChange={(event) => setNumRows(event.target.value !== '' ? Number(event.target.value) : 1)} />
                 </div>
                 <div>
                     <label>Columns:</label>
-                    <input type="number" value={numCols} onChange={(event) => setNumCols(Number(event.target.value))} />
+                    <input type="text" value={numCols} onChange={(event) => setNumCols(event.target.value !== '' ? Number(event.target.value) : 1)} />
                 </div>
                 <div>
                     <label>Square size:</label>
-                    <input type="text" value={squareSize} onChange={(event) => setSquareSize(Number(event.target.value))} />
+                    <input type="text" value={squareSize} onChange={(event) => setSquareSize(event.target.value !== '' ? Number(event.target.value) : 20)} />
                 </div>
                 <div className="print-button">
                     <button onClick={() => window.print()}>Print</button>
